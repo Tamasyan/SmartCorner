@@ -1,0 +1,39 @@
+$enable-rfs: false;
+$font-family-base: 'Inter', sans-serif;
+$font-size-base: 1.125rem; // 18px
+
+// Colors
+$primary: #FFAC1C;
+
+// Buttons
+$input-btn-font-size: 1.125rem;
+$input-btn-padding-y: 0.75rem;
+$input-btn-padding-x: 1.5rem;
+$btn-line-height: 1.5rem;
+$btn-font-weight: 500;
+
+// Headings
+$headings-font-family: 'Gilroy';
+$headings-font-weight: 600;
+$h1-font-size: 3.5rem;
+$h2-font-size: 2.5rem;
+$h4-font-size: 1.625rem;
+
+// Container
+$container-max-widths: (
+  xxl: 1320px
+);
+
+// Grid
+$grid-gutter-width: 2.5rem;
+
+// Spacers
+$spacer: 1rem;
+$spacers: (
+  0: 0,
+  1: $spacer * .25,
+  2: $spacer * .5,
+  3: $spacer,
+  4: $spacer * 3,
+  5: $spacer * 5.5,
+);
