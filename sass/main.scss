@@ -8,8 +8,22 @@ body.lock {
   overflow: hidden;
 }
 
+@include media-breakpoint-down(lg) {
+  h1 {
+    font-size: 3rem;
+  }
+
+  h2 {
+    font-size: 2.25rem;
+  }
+}
+
 .section {
-  padding: 160px 0;
+  padding: 96px 0;
+
+  @include media-breakpoint-up(lg) {
+    padding: 160px 0;
+  }
 }
 
 // Additional custom
@@ -28,19 +42,19 @@ body.lock {
   }
 
   &__nav {
-    @media (max-width: 991px) {
+    @include media-breakpoint-down(lg) {
       width: 100%;
-      height: calc(100vh - 75px);
+      height: calc(100vh - 80px);
       position: fixed;
-      top: 75px;
+      top: 80px;
       right: 0;
       transform: translateX(100%);
       z-index: 200;
       overflow-x: hidden;
       overflow-y: auto;
-      background-color: #fff;
-      padding: 35px 15px 75px;
-      transition: 0.4s;
+      background-color: $white;
+      padding: 20px 20px 72px;
+      transition: 250ms ease-in-out;
     }
 
     ul {
@@ -54,10 +68,20 @@ body.lock {
             &:hover {
               color: $primary;
             }
+
+            @include media-breakpoint-down(lg) {
+              padding-left: 0;
+              padding-right: 0;
+            }
           }
 
           &.contact-btn {
             margin-left: 24px;
+
+            @include media-breakpoint-down(lg) {
+              margin-left: 0;
+              margin-top: 32px;
+            }
           }
         }
       }
@@ -65,50 +89,22 @@ body.lock {
   }
 
   &__burger {
-    @media (min-width: 992px) {
+    @include media-breakpoint-up(lg) {
       display: none;
     }
 
-    width: 60px;
-    height: 45px;
+    width: 32px;
+    height: 32px;
     position: relative;
-    transform: rotate(0deg);
-    transition: .5s ease-in-out;
-    cursor: pointer;
 
-    span {
-      display: block;
-      position: absolute;
-      height: 8px;
-      width: 50%;
-      background: #d3531a;
-      opacity: 1;
-      transform: rotate(0deg);
-      transition: .25s ease-in-out;
+    img {
+      transition: opacity 250ms ease-in-out;
 
-      &:nth-child(even) {
-        left: 50%;
-        border-radius: 0 9px 9px 0;
-      }
-
-      &:nth-child(odd) {
-        left:0px;
-        border-radius: 9px 0 0 9px;
-      }
-
-      &:nth-child(1),
-      &:nth-child(2) {
-        top: 0px;
-      }
-
-      &:nth-child(3),
-      &:nth-child(4) {
-        top: 18px;
-      }
-
-      &:nth-child(5),
-      &:nth-child(6) {
-        top: 36px;
+      &:last-child {
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
       }
     }
   }
@@ -119,45 +115,13 @@ body.lock {
     }
 
     .header__burger {
-      span {
-        &:nth-child(1),
-        &:nth-child(6) {
-          transform: rotate(45deg);
-        }
-
-        &:nth-child(2),
-        &:nth-child(5) {
-          transform: rotate(-45deg);
-        }
-
-        &:nth-child(1) {
-          left: 5px;
-          top: 7px;
-        }
-
-        &:nth-child(2) {
-          left: calc(50% - 5px);
-          top: 7px;
-        }
-
-        &:nth-child(3) {
-          left: -50%;
+      img {
+        &:first-child {
           opacity: 0;
         }
 
-        &:nth-child(4) {
-          left: 100%;
-          opacity: 0;
-        }
-
-        &:nth-child(5) {
-          left: 5px;
-          top: 29px;
-        }
-
-        &:nth-child(6) {
-          left: calc(50% - 5px);
-          top: 29px;
+        &:last-child {
+          opacity: 1;
         }
       }
     }
@@ -169,8 +133,12 @@ body.lock {
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
-  height: calc(100vh - 98px);
+  height: calc(100vh - 80px);
   padding: 80px 0;
+
+  @include media-breakpoint-up(lg) {
+    height: calc(100vh - 98px);
+  }
   
   &::before {
     content: "";
@@ -201,7 +169,6 @@ body.lock {
 
 .c-container {
   padding-left: 20px;
-  padding-right: 20px;
 
   @media (min-width:1320px) {
     padding-left: calc((100% - 1280px) / 2);
