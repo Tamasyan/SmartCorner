@@ -225,3 +225,14 @@ body.lock {
     object-fit: cover;
   }
 }
+
+.c-image-right {
+  @include media-breakpoint-up(lg) {
+    position: absolute;
+    top: -196px;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+    height: auto;
+  }
+}
