@@ -4,6 +4,7 @@ $font-size-base: 1.125rem; // 18px
 
 // Colors
 $primary: #FFAC1C;
+$body-color: #151515;
 
 // Buttons
 $input-btn-font-size: 1.125rem;
@@ -31,9 +32,9 @@ $grid-gutter-width: 2.5rem;
 $spacer: 1rem;
 $spacers: (
   0: 0,
-  1: $spacer * .25,
-  2: $spacer * .5,
-  3: $spacer,
+  1: $spacer / 2,
+  2: $spacer,
+  3: $spacer * 2,
   4: $spacer * 3,
   5: $spacer * 5.5,
 );
