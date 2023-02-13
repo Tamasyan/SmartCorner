@@ -1,7 +1,6 @@
 // Include any default variable overrides here (though functions won't be available)
 @import "./vars.scss";
 @import "./font-face.scss";
-@import "../node_modules/owl.carousel/src/scss/owl.carousel.scss";
 @import "../node_modules/bootstrap/scss/bootstrap";
 
 body.lock {
@@ -15,6 +14,33 @@ body.lock {
 
   h2 {
     font-size: 2.25rem;
+  }
+}
+
+a {
+  &:not(.link):not(.btn)  {
+    color: $body-color;
+    text-decoration: none;
+    position: relative;
+    display: inline-block;
+    align-self: flex-start;
+
+    &::before {
+      content: "";
+      width: 0;
+      height: 2px;
+      position: absolute;
+      bottom: 0px;
+      left: 0;
+      background-color: $primary;
+      transition: 250ms;
+    }
+  
+    &:hover {
+      &::before {
+        width: 100%;
+      }
+    }
   }
 }
 
@@ -234,5 +260,44 @@ body.lock {
     width: 100%;
     left: 0;
     height: auto;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.footer {
+  font-size: 1rem;
+
+  &__logo {
+    height: 24px;
+    display: block;
+
+    img {
+      display: block;
+      height: 100%;
+    }
+  }
+
+  h6 {
+    line-height: 24px;
+  }
+}
+
+.swiper {
+  .swiper-button-next,
+  .swiper-button-prev {
+    &::after {
+      font-size: 1.125rem;
+    }
+  
+    width: 48px;
+    height: 48px;
+    border-radius: 10rem;
+    background-color: $white;
+    color: $body-color;
   }
 }
